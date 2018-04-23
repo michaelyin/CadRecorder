@@ -23,12 +23,12 @@ public class AudioReader {
         this.hostUrl = hostUrl;
     }
 
-
+/*
     public Map<String, String> readAudio(Audio audio) throws IOException {
-        AudioPayload payload = new AudioPayload("audio", audio.getEncodedAudio());
+        AudioPayload payload = new AudioPayload("filename", audio.getEncodedAudio(),"test...");
         return readAudio(payload);
     }
-
+*/
     public Map<String, String> readAudio(AudioPayload payload) throws IOException {
 
         Call<Map<String, String>> call = RetrofitClient.getClient(hostUrl)

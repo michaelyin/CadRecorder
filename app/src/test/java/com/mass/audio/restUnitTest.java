@@ -26,14 +26,19 @@ public class restUnitTest {
     @Test
     public void audioReadTest() throws IOException {
 
-        String s = "test";
+        String s = "心音文件";
         byte[] audio = s.getBytes();
 
-        AudioPayload payload = new AudioPayload("audio", Base64.encode(audio));
-        AudioReader ar = new AudioReader("http://localhost:8080/");
+        AudioPayload payload = new AudioPayload("2018.pcm", Base64.encode(audio),"test");
+        AudioReader ar = new AudioReader("http://39.108.8.106:8080/");
 
         Map<String, String> map = ar.readAudio(payload);
         System.out.print(map);
+        System.out.println("\n通过Map.keySet遍历key和value：");
+        for (String key : map.keySet()) {
+            System.out.println("key= "+ key + " and value= " + map.get(key));
+        }
+
     }
 
 

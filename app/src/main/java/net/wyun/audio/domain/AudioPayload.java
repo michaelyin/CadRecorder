@@ -2,19 +2,22 @@ package net.wyun.audio.domain;
 
 public class AudioPayload {
 
-    private String type;
+    private String filename;
+    private String encodedAudio;
+    private String test1;
 
-    public AudioPayload(String type, String encodedAudio) {
-        this.type = type;
+    public AudioPayload(String filename, String encodedAudio,String test1) {
+        this.filename = filename;
         this.encodedAudio = encodedAudio;
+        this.test1 = test1;
     }
 
-    public String getType() {
-        return type;
+    public String getFilename() {
+        return filename;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setFilename(String type) {
+        this.filename = type;
     }
 
     public String getEncodedAudio() {
@@ -25,7 +28,6 @@ public class AudioPayload {
         this.encodedAudio = encodedAudio;
     }
 
-    private String encodedAudio;
 
 
 
